@@ -11,6 +11,40 @@ function Logo({ children, ...props }: LogoProps & { children: ReactNode }) {
   );
 }
 
+const SHAPES = {
+  square: <rect x="2" y="2" width="28" height="28" rx="4" />,
+  hexagon: <path d="M16 2 28 9v14L16 30 4 23V9z" />,
+  circle: <circle cx="16" cy="16" r="14" />,
+} as const;
+
+interface BadgeProps extends LogoProps {
+  shape: keyof typeof SHAPES;
+  color: string;
+  label: string;
+  labelColor?: string;
+  labelSize?: number;
+}
+
+/** Simple mark: a coloured shape with a short label, for tools without a drawn logo. */
+function Badge({ shape, color, label, labelColor = '#fff', labelSize = 12, ...props }: BadgeProps) {
+  return (
+    <Logo {...props}>
+      <g fill={color}>{SHAPES[shape]}</g>
+      <text
+        x="16"
+        y={16 + labelSize * 0.43}
+        textAnchor="middle"
+        fontFamily="Arial, sans-serif"
+        fontWeight="700"
+        fontSize={labelSize}
+        fill={labelColor}
+      >
+        {label}
+      </text>
+    </Logo>
+  );
+}
+
 export function PythonLogo(props: LogoProps) {
   return (
     <Logo {...props}>
@@ -26,68 +60,111 @@ export function PythonLogo(props: LogoProps) {
   );
 }
 
-export function TensorFlowLogo(props: LogoProps) {
-  return (
-    <Logo {...props}>
-      <path
-        d="M16 2 4 9v6l5 2.900V12l7-4 7 4v5.900L28 15V9zM11 20v6l5 3V17.500zm10 0-5-2.500V29l5-3z"
-        fill="#ff7a00"
-      />
-      <path d="M16 12.500 13 14.300V20l3-1.700 3 1.700v-5.700z" fill="#ffa726" />
-    </Logo>
-  );
-}
-
-export function PyTorchLogo(props: LogoProps) {
-  return (
-    <Logo {...props}>
-      <path
-        d="M22 4.500 20.500 6c3.600 3.600 3.600 9.500 0 13.100s-9.500 3.600-13.100 0S3.800 9.600 7.400 6L14 .5V5"
-        fill="none"
-        stroke="#ee4c2c"
-        strokeWidth="2.600"
-        strokeLinejoin="round"
-        transform="translate(2 4)"
-      />
-      <circle cx="22.800" cy="7.500" r="2.400" fill="#ee4c2c" />
-    </Logo>
-  );
-}
-
 export function TypeScriptLogo(props: LogoProps) {
+  return <Badge shape="square" color="#3178c6" label="TS" labelSize={14} {...props} />;
+}
+
+export function JavaScriptLogo(props: LogoProps) {
   return (
-    <Logo {...props}>
-      <rect x="2" y="2" width="28" height="28" rx="4" fill="#3178c6" />
-      <text
-        x="16"
-        y="22"
-        textAnchor="middle"
-        fontFamily="Arial, sans-serif"
-        fontWeight="700"
-        fontSize="14"
-        fill="#fff"
-      >
-        TS
-      </text>
-    </Logo>
+    <Badge
+      shape="square"
+      color="#f7df1e"
+      label="JS"
+      labelColor="#1a1a1a"
+      labelSize={14}
+      {...props}
+    />
   );
+}
+
+export function CPlusPlusLogo(props: LogoProps) {
+  return <Badge shape="hexagon" color="#00599c" label="C++" labelSize={9} {...props} />;
 }
 
 export function NodejsLogo(props: LogoProps) {
+  return <Badge shape="hexagon" color="#5fa04e" label="JS" labelSize={11} {...props} />;
+}
+
+export function DjangoLogo(props: LogoProps) {
+  return <Badge shape="square" color="#0c4b33" label="dj" labelSize={15} {...props} />;
+}
+
+export function ExpressLogo(props: LogoProps) {
+  return (
+    <Badge
+      shape="square"
+      color="#f2f2f2"
+      label="ex"
+      labelColor="#1a1a1a"
+      labelSize={14}
+      {...props}
+    />
+  );
+}
+
+export function PandasLogo(props: LogoProps) {
+  return <Badge shape="square" color="#150458" label="pd" labelSize={14} {...props} />;
+}
+
+export function NumPyLogo(props: LogoProps) {
+  return <Badge shape="hexagon" color="#4dabcf" label="np" labelSize={12} {...props} />;
+}
+
+export function JenkinsLogo(props: LogoProps) {
+  return <Badge shape="circle" color="#d33833" label="J" labelSize={16} {...props} />;
+}
+
+export function PytestLogo(props: LogoProps) {
+  return <Badge shape="square" color="#0a9edc" label="pt" labelSize={14} {...props} />;
+}
+
+export function FastAPILogo(props: LogoProps) {
   return (
     <Logo {...props}>
-      <path d="M16 2 28 9v14L16 30 4 23V9z" fill="#5fa04e" />
-      <text
-        x="16"
-        y="20.500"
-        textAnchor="middle"
-        fontFamily="Arial, sans-serif"
-        fontWeight="700"
-        fontSize="11"
-        fill="#fff"
-      >
-        JS
-      </text>
+      <circle cx="16" cy="16" r="14" fill="#009688" />
+      <path d="M17.5 6 9.5 18h6l-1.5 8 8.5-12.5h-6z" fill="#fff" />
+    </Logo>
+  );
+}
+
+export function ScikitLearnLogo(props: LogoProps) {
+  return (
+    <Logo {...props}>
+      <circle cx="12" cy="18" r="9" fill="#f89939" />
+      <circle cx="21" cy="12" r="8" fill="#3499cd" />
+    </Logo>
+  );
+}
+
+export function OpenCVLogo(props: LogoProps) {
+  return (
+    <Logo {...props}>
+      <g fill="none" strokeWidth="3.6">
+        <circle cx="16" cy="9" r="5.5" stroke="#ff3b3b" />
+        <circle cx="9" cy="21.5" r="5.5" stroke="#1fcf5a" />
+        <circle cx="23" cy="21.5" r="5.5" stroke="#4d7cff" />
+      </g>
+    </Logo>
+  );
+}
+
+export function LinuxLogo(props: LogoProps) {
+  return (
+    <Logo {...props}>
+      <circle cx="16" cy="16" r="14" fill="#fcc624" />
+      <ellipse cx="16" cy="17" rx="7" ry="9" fill="#1a1a1a" />
+      <ellipse cx="16" cy="19.5" rx="4.5" ry="6" fill="#fff" />
+      <path d="M14.5 12.5h3l-1.5 2z" fill="#fcc624" />
+    </Logo>
+  );
+}
+
+export function PostmanLogo(props: LogoProps) {
+  return (
+    <Logo {...props}>
+      <circle cx="16" cy="16" r="14" fill="#ff6c37" />
+      <path d="M10.5 21.5 19 13" stroke="#fff" strokeWidth="2.6" strokeLinecap="round" />
+      <circle cx="21" cy="11" r="3" fill="#fff" />
     </Logo>
   );
 }
@@ -123,63 +200,6 @@ export function JavaLogo(props: LogoProps) {
         strokeLinecap="round"
       />
       <rect x="8" y="27" width="13" height="1.800" rx=".9" fill="#5382a1" />
-    </Logo>
-  );
-}
-
-export function CPlusPlusLogo(props: LogoProps) {
-  return (
-    <Logo {...props}>
-      <path d="M16 2 28 9v14L16 30 4 23V9z" fill="#00599c" />
-      <text
-        x="16"
-        y="20.5"
-        textAnchor="middle"
-        fontFamily="Arial, sans-serif"
-        fontWeight="700"
-        fontSize="9"
-        fill="#fff"
-      >
-        C++
-      </text>
-    </Logo>
-  );
-}
-
-export function CSharpLogo(props: LogoProps) {
-  return (
-    <Logo {...props}>
-      <path d="M16 2 28 9v14L16 30 4 23V9z" fill="#7a2d8f" />
-      <text
-        x="16"
-        y="20.5"
-        textAnchor="middle"
-        fontFamily="Arial, sans-serif"
-        fontWeight="700"
-        fontSize="12"
-        fill="#fff"
-      >
-        C#
-      </text>
-    </Logo>
-  );
-}
-
-export function CLogo(props: LogoProps) {
-  return (
-    <Logo {...props}>
-      <path d="M16 2 28 9v14L16 30 4 23V9z" fill="#4d7fc4" />
-      <text
-        x="16"
-        y="20.5"
-        textAnchor="middle"
-        fontFamily="Arial, sans-serif"
-        fontWeight="700"
-        fontSize="12"
-        fill="#fff"
-      >
-        C
-      </text>
     </Logo>
   );
 }
