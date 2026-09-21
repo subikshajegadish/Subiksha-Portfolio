@@ -33,7 +33,7 @@ export function Experience() {
 
         {job && (
           <div className="flex grow flex-col gap-3.5">
-            <h3 className="m-0 font-pixel text-[28px] leading-[1.1] font-bold text-white md:text-[36px] xl:text-[44px]">
+            <h3 className="m-0 font-pixel text-[28px] leading-[1.1] font-bold text-white md:text-[36px] xl:text-[40px]">
               {job.title}
             </h3>
             <div className="font-body text-[16px] font-medium text-white/78 md:text-[19px]">
@@ -41,12 +41,12 @@ export function Experience() {
               {'  |  '}
               {job.dates}
             </div>
-            <ul className="mx-0 mt-3 mb-0 flex list-none flex-col gap-4 p-0 md:mt-5.5 md:gap-5.5">
+            <ul className="mx-0 mt-3 mb-0 flex list-none flex-col gap-4 p-0 md:mt-5 md:gap-4.5">
               {job.bullets.map((bullet, i) => (
                 <li key={i} className="flex items-start gap-3 md:gap-4.5">
                   {/* Dot is centred on the first line of text at each size. */}
-                  <span className="mt-2 size-2.25 shrink-0 rounded-full bg-azure md:mt-2.5 xl:mt-3" />
-                  <span className="font-body text-[17px] leading-[1.55] font-medium text-white md:text-[20px] xl:text-[22px]">
+                  <span className="mt-2 size-2.25 shrink-0 rounded-full bg-azure md:mt-2.5" />
+                  <span className="font-body text-[17px] leading-[1.55] font-medium text-white md:text-[19px]">
                     {bullet}
                   </span>
                 </li>
