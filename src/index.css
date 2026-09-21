@@ -1,0 +1,57 @@
+/*
+ * Tailwind without Preflight: the design relies on browser defaults (line-height: normal,
+ * inline SVGs, native button metrics), so only the theme and utilities layers are loaded.
+ */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+@import './styles/animations.css' layer(components);
+
+@theme {
+  --font-pixel: 'Pixelify Sans', monospace;
+  --font-body: 'Figtree', sans-serif;
+
+  --color-night: #06192b; /* page background */
+  --color-navy: #0b2f57;
+  --color-navy-deep: #071e38;
+  --color-azure: #7bc9fb; /* light blue accents and borders */
+  --color-ice: #eaf6ff; /* pale blue icons and chips */
+  --color-ink: #06213a; /* dark text on light surfaces */
+  --color-paper: #f4fbff;
+  --color-shade: #030b18; /* dimming overlays */
+  --color-halo: #04121f; /* ring around timeline markers */
+}
+
+@layer base {
+  html {
+    scroll-snap-type: y mandatory;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    margin: 0;
+    font-family: 'Figtree', 'Pixelify Sans', sans-serif;
+    background: var(--color-night);
+  }
+
+  a {
+    color: var(--color-ink);
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #ffffff;
+  }
+
+  a:focus-visible {
+    outline: 3px solid #ffffff;
+    outline-offset: 4px;
+    border-radius: 6px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}

@@ -1,0 +1,252 @@
+/*
+ * Night scene and scroll animations. Per-element durations and delays come from the
+ * scene data as inline styles; these classes provide the motion itself.
+ */
+
+/* Pine trees sway around their base. --a is the sway angle, set per tree layer. */
+.t {
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+  animation: sway 6s ease-in-out infinite alternate;
+}
+
+@keyframes sway {
+  from {
+    transform: rotate(calc(var(--a) * -1));
+  }
+  to {
+    transform: rotate(var(--a));
+  }
+}
+
+/* Bird flocks crossing the sky, each flock on its own schedule. */
+.fly {
+  animation: fly 90s linear infinite;
+}
+
+.fly.f1 {
+  animation-duration: 95s;
+  animation-delay: -30s;
+}
+
+.fly.f2 {
+  animation-duration: 120s;
+  animation-delay: -85s;
+}
+
+.fly.f3 {
+  animation-duration: 110s;
+  animation-delay: -8s;
+}
+
+.fly.f4 {
+  animation-duration: 140s;
+  animation-delay: -60s;
+}
+
+@keyframes fly {
+  0% {
+    transform: translate(-160px, 300px);
+  }
+  50% {
+    transform: translate(720px, 180px);
+  }
+  100% {
+    transform: translate(1620px, 90px);
+  }
+}
+
+.wing {
+  transform-box: fill-box;
+  transform-origin: 50% 60%;
+  animation: flap 1.1s ease-in-out infinite;
+}
+
+@keyframes flap {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(-0.55);
+  }
+}
+
+/* Scroll-down chevrons pulse one after another. */
+.ch {
+  animation: pulse 1.8s ease-in-out infinite;
+  opacity: 0.35;
+}
+
+.ch.c2 {
+  animation-delay: 0.2s;
+}
+
+.ch.c3 {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Scroll-linked effects: the scene blurs and dims, the hero text fades out. */
+.bg {
+  animation: bgblur linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 900px;
+}
+
+@keyframes bgblur {
+  from {
+    filter: blur(0px);
+  }
+  to {
+    filter: blur(7px);
+  }
+}
+
+.herotxt {
+  animation: fadeout linear both;
+  animation-timeline: scroll(root);
+  animation-range: 0 450px;
+}
+
+@keyframes fadeout {
+  to {
+    opacity: 0;
+    transform: translateY(-36px);
+  }
+}
+
+.dim2 {
+  animation: dim2in linear both;
+  animation-timeline: scroll(root);
+  animation-range: 900px 1800px;
+}
+
+@keyframes dim2in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 0.5;
+  }
+}
+
+.star {
+  animation: twinkle 4s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  from {
+    opacity: 0.25;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.aur {
+  animation: aurdrift 26s ease-in-out infinite alternate;
+}
+
+.aur.a2 {
+  animation-duration: 34s;
+}
+
+@keyframes aurdrift {
+  from {
+    transform: translateX(-50px);
+    opacity: 0.55;
+  }
+  to {
+    transform: translateX(50px);
+    opacity: 1;
+  }
+}
+
+.mist {
+  animation: mistdrift 70s ease-in-out infinite alternate;
+}
+
+.mist.m2 {
+  animation-duration: 95s;
+  animation-direction: alternate-reverse;
+}
+
+@keyframes mistdrift {
+  from {
+    transform: translateX(-90px);
+  }
+  to {
+    transform: translateX(90px);
+  }
+}
+
+.ff {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ffloat 9s ease-in-out infinite;
+}
+
+@keyframes ffloat {
+  0% {
+    transform: translate(0, 0);
+    opacity: 0.15;
+  }
+  25% {
+    opacity: 1;
+  }
+  50% {
+    transform: translate(22px, -34px);
+    opacity: 0.35;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-14px, -70px);
+    opacity: 0.1;
+  }
+}
+
+.shoot {
+  animation: shoot 17s linear infinite;
+}
+
+@keyframes shoot {
+  0%,
+  90% {
+    opacity: 0;
+    transform: translate(0, 0);
+  }
+  92% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(-300px, 150px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .t,
+  .fly,
+  .wing,
+  .ch,
+  .herotxt,
+  .star,
+  .aur,
+  .mist,
+  .ff,
+  .shoot {
+    animation: none;
+  }
+}
