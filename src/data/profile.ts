@@ -7,6 +7,7 @@ export const PROFILE = {
   links: {
     github: 'https://github.com/subikshajegadish',
     linkedin: 'https://www.linkedin.com/in/subiksha-jegadish',
-    cv: '#cv',
+    /** Served from public/, relative to the site root so it works under any base path. */
+    cv: `${import.meta.env.BASE_URL}Subiksha_Jegadish_SDE.pdf`,
   },
 } as const;

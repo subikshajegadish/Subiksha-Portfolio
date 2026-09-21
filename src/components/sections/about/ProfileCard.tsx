@@ -17,6 +17,8 @@ export function ProfileCard() {
       </p>
       <a
         href={PROFILE.links.cv}
+        target="_blank"
+        rel="noopener noreferrer"
         className="rounded-xl border-3 border-navy px-7 py-3 text-[18px] font-semibold text-navy"
       >
         Click to view my CV
