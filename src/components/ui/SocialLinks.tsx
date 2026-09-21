@@ -4,10 +4,13 @@ import { GitHubIcon, LinkedInIcon, MailIcon } from '../icons';
 import { CircleIconLink } from './CircleIconLink';
 
 const VARIANTS = {
-  /** Fixed icon row at the top of the page. */
-  bar: { gap: 'gap-10', link: 'size-12 border-azure' },
+  /** Fixed vertical rail on the right edge of the page. */
+  rail: {
+    layout: 'flex-col gap-3 md:gap-4 xl:gap-5',
+    link: 'size-9 border-azure md:size-11 xl:size-12 [&>svg]:size-5 md:[&>svg]:size-6.5',
+  },
   /** Row inside the About card. */
-  card: { gap: 'gap-7', link: 'size-13 border-navy-deep' },
+  card: { layout: 'gap-7', link: 'size-13 border-navy-deep' },
 } as const;
 
 interface SocialLinksProps {
@@ -16,9 +19,9 @@ interface SocialLinksProps {
 }
 
 export function SocialLinks({ variant, className }: SocialLinksProps) {
-  const { gap, link } = VARIANTS[variant];
+  const { layout, link } = VARIANTS[variant];
   return (
-    <div className={cn('flex', gap, className)}>
+    <div className={cn('flex', layout, className)}>
       <CircleIconLink href={PROFILE.links.github} label="GitHub" className={link}>
         <GitHubIcon />
       </CircleIconLink>

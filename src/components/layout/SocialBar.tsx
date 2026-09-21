@@ -1,11 +1,10 @@
 import { SocialLinks } from '../ui/SocialLinks';
 
-/** Fixed icon row centred at the top of the viewport. */
+/** Fixed icon rail, vertically centred on the right edge of the viewport. */
 export function SocialBar() {
   return (
-    <div className="pointer-events-none fixed top-6 right-0 left-0 z-5 flex flex-col items-center gap-3">
-      <SocialLinks variant="bar" className="pointer-events-auto" />
-      <div className="h-1 w-57.5 rounded-xs bg-azure" />
+    <div className="pointer-events-none fixed top-1/2 right-2 z-5 -translate-y-1/2 md:right-4 xl:right-6">
+      <SocialLinks variant="rail" className="pointer-events-auto" />
     </div>
   );
 }
