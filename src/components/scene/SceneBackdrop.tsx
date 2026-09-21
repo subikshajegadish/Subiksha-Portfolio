@@ -15,7 +15,7 @@ interface SceneBackdropProps {
 export function SceneBackdrop({ top, dimmed = false }: SceneBackdropProps) {
   return (
     <div
-      className="pointer-events-none absolute left-0 z-0 h-[900px] w-full overflow-hidden bg-night"
+      className="pointer-events-none absolute left-0 z-0 h-225 w-full overflow-hidden bg-night"
       style={{ top }}
     >
       <div className="absolute -inset-10 blur-[7px]">

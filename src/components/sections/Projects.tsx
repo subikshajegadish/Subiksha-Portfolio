@@ -13,8 +13,8 @@ export function Projects() {
 
   return (
     <ContentSection id="projects" title="Projects">
-      <div className="mt-[70px] flex items-center gap-15">
-        <div className="flex w-[460px] shrink-0 flex-col gap-[22px]">
+      <div className="mt-17.5 flex items-center gap-15">
+        <div className="flex w-115 shrink-0 flex-col gap-5.5">
           <div className="font-pixel text-[22px] font-medium tracking-[0.3em] text-white/70">
             [ {pad(index + 1)} / {pad(PROJECTS.length)} ]
           </div>
@@ -31,9 +31,9 @@ export function Projects() {
           </div>
         </div>
 
-        <div className="flex items-center gap-[18px]">
+        <div className="flex items-center gap-4.5">
           <ArrowButton direction="left" label="Previous project" onClick={prev} />
-          <div className="box-border flex h-[380px] w-[580px] flex-col items-center justify-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 p-[30px] text-center">
+          <div className="box-border flex h-95 w-145 flex-col items-center justify-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 p-7.5 text-center">
             <div className="font-pixel text-[30px] font-bold text-white">{project.title}</div>
             <div className="font-pixel text-[16px] font-medium tracking-[0.2em] text-white/60 uppercase">
               [Add a screenshot]

@@ -14,7 +14,7 @@ export function Hero() {
     <Section id="home">
       <nav
         aria-label="Sections"
-        className="absolute top-[30px] left-10 z-5 flex flex-col items-start gap-2.5"
+        className="absolute top-7.5 left-10 z-5 flex flex-col items-start gap-2.5"
       >
         {NAV_ITEMS.map((item) => (
           <a
@@ -27,7 +27,7 @@ export function Hero() {
         ))}
       </nav>
 
-      <div className="herotxt absolute top-[356px] left-0 flex w-full justify-center">
+      <div className="herotxt absolute top-89 left-0 flex w-full justify-center">
         <div className="flex flex-col items-start gap-1.5">
           <p className="m-0 text-[30px] leading-none font-bold text-white">Hi, I'm</p>
           <h1 className="m-0 text-[84px] leading-none font-bold tracking-[1px] text-white">
@@ -42,14 +42,14 @@ export function Hero() {
       <a
         href="#about"
         aria-label="Scroll down"
-        className="absolute bottom-[26px] left-[44px] block leading-[0]"
+        className="absolute bottom-6.5 left-11 block leading-[0]"
       >
         <ScrollDownIcon />
       </a>
       <a
         href="#about"
         aria-label="Scroll down"
-        className="absolute right-[44px] bottom-[26px] block leading-[0]"
+        className="absolute right-11 bottom-6.5 block leading-[0]"
       >
         <ScrollDownIcon />
       </a>

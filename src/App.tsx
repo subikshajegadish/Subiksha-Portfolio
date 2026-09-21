@@ -18,7 +18,7 @@ const FIRST_DIMMED_SECTION = 2;
 export default function App() {
   return (
     <div
-      className="relative w-full min-w-[1440px] bg-night font-pixel"
+      className="relative w-full min-w-360 bg-night font-pixel"
       style={{ height: SECTIONS.length * SECTION_HEIGHT }}
     >
       {/* The hero sits over the live scene; every later section gets a static backdrop. */}

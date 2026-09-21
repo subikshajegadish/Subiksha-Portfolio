@@ -35,7 +35,7 @@ function When({ children, side }: { children: string; side: Side }) {
 
 function Marker() {
   return (
-    <div className="relative z-1 flex size-[30px] items-center justify-center rounded-full bg-white shadow-[0_0_0_4px_rgba(4,18,31,0.6)]">
+    <div className="relative z-1 flex size-7.5 items-center justify-center rounded-full bg-white shadow-[0_0_0_4px_rgba(4,18,31,0.6)]">
       <CheckIcon />
     </div>
   );
@@ -43,7 +43,7 @@ function Marker() {
 
 export function Timeline() {
   return (
-    <div className="box-border flex h-[650px] w-[640px] flex-col justify-center px-9 py-10">
+    <div className="box-border flex h-162.5 w-160 flex-col justify-center px-9 py-10">
       <div className="relative">
         <div
           className="absolute top-0 bottom-0 left-1/2 -ml-0.5 w-1 rounded-[2px]"
@@ -55,7 +55,7 @@ export function Timeline() {
             return (
               <li
                 key={milestone.title}
-                className="grid h-[118px] grid-cols-[minmax(0,1fr)_30px_minmax(0,1fr)] items-center gap-x-[18px]"
+                className="grid h-29.5 grid-cols-[minmax(0,1fr)_30px_minmax(0,1fr)] items-center gap-x-4.5"
               >
                 {entryOnLeft ? (
                   <Entry milestone={milestone} side="left" />

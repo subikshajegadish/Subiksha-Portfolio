@@ -5,7 +5,7 @@ import { cn } from '../../lib/cn';
 export function Section({ className, ...props }: ComponentPropsWithoutRef<'section'>) {
   return (
     <section
-      className={cn('relative z-1 h-[900px] w-full min-w-[1440px] snap-start', className)}
+      className={cn('relative z-1 h-225 w-full min-w-360 snap-start', className)}
       {...props}
     />
   );

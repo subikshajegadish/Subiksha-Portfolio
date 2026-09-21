@@ -3,7 +3,7 @@ import { SocialLinks } from '../../ui/SocialLinks';
 
 export function ProfileCard() {
   return (
-    <div className="box-border flex h-[650px] w-[580px] flex-col items-center justify-between rounded-[24px] border-3 border-navy bg-paper/84 px-12 py-11 text-center">
+    <div className="box-border flex h-162.5 w-145 flex-col items-center justify-between rounded-[24px] border-3 border-navy bg-paper/84 px-12 py-11 text-center">
       <div className="flex size-40 items-center justify-center rounded-full border-5 border-azure bg-navy font-pixel text-[58px] font-bold text-ice shadow-[0_0_28px_rgba(123,201,251,0.7)]">
         {PROFILE.initials}
       </div>
@@ -14,7 +14,7 @@ export function ProfileCard() {
       </p>
       <a
         href={PROFILE.links.cv}
-        className="rounded-[12px] border-3 border-navy px-[34px] py-3.5 text-[20px] font-semibold text-navy"
+        className="rounded-[12px] border-3 border-navy px-8.5 py-3.5 text-[20px] font-semibold text-navy"
       >
         Click to view my CV
       </a>
