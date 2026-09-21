@@ -7,7 +7,11 @@ export const PROJECTS: readonly Project[] = [
     bullets: [
       'A tool that surfaces newcomer-friendly open-source issues across repositories, scoring them on more than just the good-first-issue label.',
     ],
-    tech: ['Open Source', '[Tech]'],
+    tech: ['Open Source'],
+    link: {
+      label: 'github.com/subikshajegadish/open-git',
+      href: 'https://github.com/subikshajegadish/open-git',
+    },
   },
   {
     title: 'Poke Battle: Sign Language Learning Game',
