@@ -5,13 +5,17 @@ import type { Milestone } from '../types/content';
  * with its date on the right, the next flips, and so on.
  */
 export const TIMELINE: readonly Milestone[] = [
-  { title: 'VIT', detail: 'BTech, Computer Science and Engineering', when: '2020 to 2024' },
-  { title: 'ISRO', detail: 'Software Development Intern, computer vision', when: 'Summer 2023' },
-  { title: 'ION Group', detail: 'Software Analyst, Bengaluru', when: '2024 to 2025' },
+  {
+    title: 'VIT',
+    detail: 'Bachelor of Technology in Computer Science and Engineering',
+    when: 'Aug 2020 – May 2024',
+  },
+  { title: 'ISRO', detail: 'Software Development Intern', when: 'May 2023 – Jul 2023' },
+  { title: 'ION Group', detail: 'Software Analyst', when: 'Jan 2024 – Jul 2025' },
   {
     title: 'University of Maryland',
-    detail: 'MEng, Software Engineering',
-    when: 'Expected May 2027',
+    detail: 'Master of Engineering in Software Engineering',
+    when: 'Aug 2025 – May 2027 (Expected)',
   },
-  { title: 'AWS', detail: 'Software Development Intern, Arlington VA', when: 'Summer 2026' },
+  { title: 'AWS', detail: 'Software Development Engineer Intern', when: 'Jun 2026 – Aug 2026' },
 ];
