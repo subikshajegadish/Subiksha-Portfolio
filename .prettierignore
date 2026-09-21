@@ -1,3 +1,2 @@
 dist
 package-lock.json
-src/data/scene/*.generated.ts
