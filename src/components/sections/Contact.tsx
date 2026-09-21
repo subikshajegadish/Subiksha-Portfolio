@@ -7,7 +7,7 @@ function ContactButton({ href, children }: { href: string; children: ReactNode }
   return (
     <a
       href={href}
-      className="box-border flex h-27 items-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 px-11 font-pixel text-[26px] font-semibold tracking-[0.06em] text-white"
+      className="box-border flex h-20 items-center justify-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 px-8 font-pixel text-[20px] font-semibold tracking-[0.06em] text-white md:h-27 md:px-11 md:text-[26px]"
     >
       {children}
     </a>
@@ -17,14 +17,14 @@ function ContactButton({ href, children }: { href: string; children: ReactNode }
 export function Contact() {
   return (
     <ContentSection id="contact" title="Contact Me">
-      <div className="flex flex-1 flex-col items-center justify-center gap-8.5 pb-10 text-center">
-        <div className="font-pixel text-[20px] font-semibold tracking-[0.4em] text-white/70 uppercase">
+      <div className="flex flex-1 flex-col items-center justify-center gap-6 py-10 text-center md:gap-8.5 xl:pt-0">
+        <div className="font-pixel text-[14px] font-semibold tracking-[0.25em] text-white/70 uppercase md:text-[20px] md:tracking-[0.4em]">
           Have a project in mind?
         </div>
-        <h3 className="m-0 font-pixel text-[130px] leading-none font-bold tracking-[0.02em] text-white uppercase">
+        <h3 className="m-0 font-pixel text-[56px] leading-none font-bold tracking-[0.02em] text-white uppercase sm:text-[80px] md:text-[104px] xl:text-[130px]">
           Let's talk
         </h3>
-        <div className="mt-7.5 flex gap-8">
+        <div className="mt-4 flex w-full flex-col gap-4 sm:w-auto sm:flex-row sm:gap-8 md:mt-7.5">
           <ContactButton href={`mailto:${PROFILE.email}`}>
             <MailIcon />
             <span>Email Me</span>
