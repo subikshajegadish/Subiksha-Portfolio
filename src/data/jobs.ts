@@ -8,9 +8,9 @@ export const JOBS: readonly Job[] = [
     place: 'INFO College, College Park',
     dates: 'From Aug 31',
     bullets: [
-      'Graduate Course Aide for INST314 and INST464 at the INFO College, about 10 hours a week for each course.',
-      '[Add what you do day to day, e.g. grading, office hours, supporting students and instructors]',
-      '[Add a bullet on a concrete outcome or a tool you used]',
+      'Supporting faculty member in course logistics, grading and assisting students for the below courses:',
+      'INST314 - Statistics for Information Science',
+      'INST464 - Decision Making for Cybersecurity',
     ],
   },
   {
