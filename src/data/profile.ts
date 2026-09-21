@@ -3,10 +3,10 @@ export const PROFILE = {
   name: 'Subiksha Jegadish',
   initials: 'SJ',
   role: 'Software Developer',
-  email: 'subikshaj13@gmail.com',
+  email: 'subiksha.jegadish@gmail.com',
   links: {
-    github: 'https://github.com/',
-    linkedin: 'https://www.linkedin.com/',
+    github: 'https://github.com/subikshajegadish',
+    linkedin: 'https://www.linkedin.com/in/subiksha-jegadish',
     cv: '#cv',
   },
 } as const;
