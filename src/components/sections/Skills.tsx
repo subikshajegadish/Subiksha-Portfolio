@@ -4,7 +4,8 @@ import { ContentSection } from '../layout/ContentSection';
 export function Skills() {
   return (
     <ContentSection id="skills" title="Skills">
-      <div className="mt-8 grid grid-cols-1 gap-10 sm:grid-cols-2 md:mt-10 lg:grid-cols-3 lg:grid-rows-[repeat(2,auto)] lg:gap-14 xl:mt-22.5 xl:gap-20">
+      {/* Columns size to their widest group and the grid is centred as a block. */}
+      <div className="mt-8 grid grid-cols-[auto] justify-center gap-x-16 gap-y-10 sm:grid-cols-[repeat(2,auto)] md:mt-10 lg:grid-cols-[repeat(3,auto)] lg:grid-rows-[repeat(2,auto)] lg:gap-x-20 lg:gap-y-14 xl:mt-22.5 xl:gap-x-28 xl:gap-y-20">
         {SKILL_GROUPS.map((group) => (
           <div key={group.title}>
             <h3 className="mx-0 mt-0 mb-4 font-pixel text-[22px] leading-[1.1] font-bold tracking-[0.06em] text-azure md:mb-6.5 md:text-[28px]">
