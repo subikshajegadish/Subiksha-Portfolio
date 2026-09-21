@@ -1,12 +1,31 @@
 import type { ComponentPropsWithoutRef } from 'react';
 import { cn } from '../../lib/cn';
+import { SceneBackdrop } from '../scene/SceneBackdrop';
 
-/** A full-width, 900px (SECTION_HEIGHT) screen that scroll-snaps into place. */
-export function Section({ className, ...props }: ComponentPropsWithoutRef<'section'>) {
+interface SectionProps extends ComponentPropsWithoutRef<'div'> {
+  id: string;
+  /**
+   * Static blurred copy of the scene behind this section, so it looks right wherever the
+   * fixed scene layer does not reach. `dimmed` matches the scene after it has darkened.
+   */
+  backdrop?: 'none' | 'plain' | 'dimmed';
+}
+
+/**
+ * One screen of the page that scroll-snaps into place. On wide screens every section is
+ * exactly 900px tall; on smaller screens it fills the viewport and grows with its content.
+ * Layout classes passed in `className` apply to the content box.
+ */
+export function Section({ id, backdrop = 'none', className, children, ...props }: SectionProps) {
   return (
-    <section
-      className={cn('relative z-1 h-225 w-full min-w-360 snap-start', className)}
-      {...props}
-    />
+    <section id={id} className="relative snap-start">
+      {backdrop !== 'none' && <SceneBackdrop dimmed={backdrop === 'dimmed'} />}
+      <div
+        className={cn('relative z-1 min-h-svh w-full xl:h-225 xl:min-h-0', className)}
+        {...props}
+      >
+        {children}
+      </div>
+    </section>
   );
 }

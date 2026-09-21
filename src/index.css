@@ -22,9 +22,25 @@
 }
 
 @layer base {
+  :root {
+    /* Height of one screen, used by the scroll-linked scene effects. */
+    --hero-h: 100svh;
+  }
+
   html {
-    scroll-snap-type: y mandatory;
+    /* Sections can outgrow the viewport on small screens, so only snap loosely there. */
+    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
+  }
+
+  @media (width >= 80rem) {
+    :root {
+      --hero-h: 900px;
+    }
+
+    html {
+      scroll-snap-type: y mandatory;
+    }
   }
 
   body {

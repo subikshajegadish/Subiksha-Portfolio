@@ -9,7 +9,7 @@ import { Sky } from './Sky';
  */
 export function NightScene() {
   return (
-    <div className="pointer-events-none fixed top-0 left-0 z-0 h-screen max-h-225 w-full overflow-hidden bg-night">
+    <div className="pointer-events-none fixed top-0 left-0 z-0 h-screen w-full overflow-hidden bg-night xl:max-h-225">
       <div className="bg absolute -inset-10">
         <SceneSvg>
           <SceneDefs />

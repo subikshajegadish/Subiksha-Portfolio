@@ -96,11 +96,14 @@
   }
 }
 
-/* Scroll-linked effects: the scene blurs and dims, the hero text fades out. */
+/*
+ * Scroll-linked effects: the scene blurs over the first screen, the hero text fades out over
+ * half of it, and the scene dims over the second. --hero-h is the height of one screen.
+ */
 .bg {
   animation: bgblur linear both;
   animation-timeline: scroll(root);
-  animation-range: 0 900px;
+  animation-range: 0 var(--hero-h);
 }
 
 @keyframes bgblur {
@@ -115,7 +118,7 @@
 .herotxt {
   animation: fadeout linear both;
   animation-timeline: scroll(root);
-  animation-range: 0 450px;
+  animation-range: 0 calc(var(--hero-h) / 2);
 }
 
 @keyframes fadeout {
@@ -128,7 +131,7 @@
 .dim2 {
   animation: dim2in linear both;
   animation-timeline: scroll(root);
-  animation-range: 900px 1800px;
+  animation-range: var(--hero-h) calc(var(--hero-h) * 2);
 }
 
 @keyframes dim2in {
