@@ -48,7 +48,7 @@ export function Timeline() {
     <div className="box-border flex w-full max-w-160 flex-col justify-center xl:h-162.5 xl:px-9 xl:py-10">
       <div className="relative">
         <div
-          className="absolute top-0 bottom-0 left-1/2 -ml-0.5 w-1 rounded-[2px]"
+          className="absolute top-0 bottom-0 left-1/2 -ml-0.5 w-1 rounded-xs"
           style={{ background: LINE_GRADIENT }}
         />
         <ol className="relative m-0 list-none p-0">

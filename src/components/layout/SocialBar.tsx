@@ -5,7 +5,7 @@ export function SocialBar() {
   return (
     <div className="pointer-events-none fixed top-6 right-0 left-0 z-5 flex flex-col items-center gap-3">
       <SocialLinks variant="bar" className="pointer-events-auto" />
-      <div className="h-1 w-57.5 rounded-[2px] bg-azure" />
+      <div className="h-1 w-57.5 rounded-xs bg-azure" />
     </div>
   );
 }

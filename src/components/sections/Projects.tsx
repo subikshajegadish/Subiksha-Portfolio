@@ -35,7 +35,7 @@ export function Projects() {
         <div className="flex min-w-0 flex-1 items-center justify-center gap-3 md:gap-4.5 xl:justify-start">
           <ArrowButton direction="left" label="Previous project" onClick={prev} />
           {/* Keeps the 580x380 proportions and shrinks to fit narrower screens. */}
-          <div className="box-border flex aspect-[29/19] max-w-145 min-w-0 flex-1 flex-col items-center justify-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 p-4 text-center md:p-7.5">
+          <div className="box-border flex aspect-29/19 max-w-145 min-w-0 flex-1 flex-col items-center justify-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 p-4 text-center md:p-7.5">
             <div className="font-pixel text-[20px] font-bold text-white md:text-[30px]">
               {project.title}
             </div>
