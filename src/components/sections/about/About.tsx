@@ -8,7 +8,7 @@ export function About() {
     <Section
       id="about"
       backdrop="plain"
-      className="box-border flex flex-col items-center gap-10 px-6 pt-28 pb-12 md:px-12 xl:flex-row xl:items-end xl:justify-center xl:px-0 xl:pt-0 xl:pb-12.5"
+      className="box-border flex flex-col items-center gap-10 px-6 pt-28 pb-12 md:px-12 xl:flex-row xl:items-center xl:justify-center xl:px-0 xl:pt-22 xl:pb-0"
     >
       <ProfileCard />
       <Timeline />
