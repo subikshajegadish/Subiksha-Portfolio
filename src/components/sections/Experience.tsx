@@ -10,8 +10,8 @@ export function Experience() {
   return (
     <ContentSection id="experience" title="Work Experience">
       {/* Company picker above the details on smaller screens, beside them from xl up. */}
-      <div className="mt-8 flex flex-col gap-8 md:mt-10 xl:mt-14 xl:flex-row xl:items-start xl:gap-22.5">
-        <div className="grid grid-cols-2 gap-3 xl:flex xl:w-115 xl:shrink-0 xl:flex-col xl:gap-3.5">
+      <div className="mt-8 flex flex-col gap-8 md:mt-10 xl:mt-14 xl:flex-row xl:items-start xl:gap-16">
+        <div className="grid grid-cols-2 gap-3 xl:flex xl:w-95 xl:shrink-0 xl:flex-col xl:gap-3.5">
           {JOBS.map((j, i) => {
             const active = i === selected;
             return (
@@ -21,7 +21,7 @@ export function Experience() {
                 aria-pressed={active}
                 onClick={() => setSelected(i)}
                 className={cn(
-                  'box-border h-16 w-full cursor-pointer rounded-[18px] border-3 border-azure px-4 py-0 text-left font-pixel text-[16px] md:h-20 md:px-6 md:text-[20px] xl:h-22 xl:px-7.5 xl:text-[24px]',
+                  'box-border h-16 w-full cursor-pointer rounded-[18px] border-3 border-azure px-4 py-0 text-left font-pixel text-[16px] md:h-20 md:px-6 md:text-[20px] xl:h-22 xl:px-7 xl:text-[22px]',
                   active ? 'bg-ice font-bold text-navy' : 'bg-white/5 font-medium text-white',
                 )}
               >

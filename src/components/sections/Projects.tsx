@@ -14,12 +14,12 @@ export function Projects() {
   return (
     <ContentSection id="projects" title="Projects">
       {/* Details above the preview on smaller screens, beside it from xl up. */}
-      <div className="mt-8 flex flex-col gap-8 md:mt-10 xl:mt-17.5 xl:flex-row xl:items-center xl:gap-15">
-        <div className="flex flex-col gap-4 md:gap-5.5 xl:w-115 xl:shrink-0">
+      <div className="mt-8 flex flex-col gap-8 md:mt-10 xl:mt-17.5 xl:flex-row xl:items-center xl:gap-14">
+        <div className="flex flex-col gap-4 md:gap-5.5 xl:w-100 xl:shrink-0">
           <div className="font-pixel text-[16px] font-medium tracking-[0.3em] text-white/70 md:text-[22px]">
             [ {pad(index + 1)} / {pad(PROJECTS.length)} ]
           </div>
-          <h3 className="m-0 font-pixel text-[32px] leading-[1.1] font-bold text-white uppercase md:text-[44px] xl:text-[52px]">
+          <h3 className="m-0 font-pixel text-[32px] leading-[1.1] font-bold text-white uppercase md:text-[44px] xl:text-[48px]">
             {project.title}
           </h3>
           <p className="m-0 font-body text-[17px] leading-[1.6] font-medium text-white/86 md:text-[19px] xl:text-[21px]">
