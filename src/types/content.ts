@@ -27,7 +27,8 @@ export interface Milestone {
 
 export interface Skill {
   name: string;
-  logo: ComponentType<SVGProps<SVGSVGElement>>;
+  /** Brand mark; skills without one (concepts) get a plain bullet. */
+  logo?: ComponentType<SVGProps<SVGSVGElement>>;
 }
 
 export interface SkillGroup {
