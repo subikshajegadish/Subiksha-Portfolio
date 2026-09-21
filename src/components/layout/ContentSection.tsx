@@ -16,7 +16,7 @@ export function ContentSection({ id, title, contained = true, children }: Conten
     <Section
       id={id}
       backdrop="dimmed"
-      className="box-border flex flex-col px-6 pt-28 pb-12 md:px-12 xl:px-25 xl:pt-32.5 xl:pb-12.5"
+      className="box-border flex flex-col pt-16 pr-12 pb-12 pl-6 md:pt-20 md:pr-18 md:pl-12 xl:px-25 xl:pt-32.5 xl:pb-12.5"
     >
       <div
         className={cn(
