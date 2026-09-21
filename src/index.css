@@ -28,18 +28,12 @@
   }
 
   html {
-    /* Sections can outgrow the viewport on small screens, so only snap loosely there. */
-    scroll-snap-type: y proximity;
     scroll-behavior: smooth;
   }
 
   @media (width >= 80rem) {
     :root {
       --hero-h: 900px;
-    }
-
-    html {
-      scroll-snap-type: y mandatory;
     }
   }
 

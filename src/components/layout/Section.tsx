@@ -12,13 +12,13 @@ interface SectionProps extends ComponentPropsWithoutRef<'div'> {
 }
 
 /**
- * One screen of the page that scroll-snaps into place. On wide screens every section is
- * exactly 900px tall; on smaller screens it fills the viewport and grows with its content.
+ * One screen of the page. On wide screens every section is exactly 900px tall; on smaller
+ * screens it fills the viewport and grows with its content.
  * Layout classes passed in `className` apply to the content box.
  */
 export function Section({ id, backdrop = 'none', className, children, ...props }: SectionProps) {
   return (
-    <section id={id} className="relative snap-start">
+    <section id={id} className="relative">
       {backdrop !== 'none' && <SceneBackdrop dimmed={backdrop === 'dimmed'} />}
       <div
         className={cn('relative z-1 min-h-svh w-full xl:h-225 xl:min-h-0', className)}
