@@ -10,8 +10,11 @@ export interface Job {
 
 export interface Project {
   title: string;
-  description: string;
+  dates?: string;
+  bullets: readonly string[];
   tech: readonly string[];
+  /** Optional link shown under the bullets, e.g. the source repo. */
+  link?: { label: string; href: string };
 }
 
 /** A milestone on the About timeline. */
