@@ -16,7 +16,7 @@ function ContactButton({ href, children }: { href: string; children: ReactNode }
 
 export function Contact() {
   return (
-    <ContentSection id="contact" title="Contact Me">
+    <ContentSection id="contact" title="Contact Me" contained={false}>
       <div className="flex flex-1 flex-col items-center justify-center gap-6 py-10 text-center md:gap-8.5 xl:pt-0">
         <div className="font-pixel text-[14px] font-semibold tracking-[0.25em] text-white/70 uppercase md:text-[20px] md:tracking-[0.4em]">
           Have a project in mind?
