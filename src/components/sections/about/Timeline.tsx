@@ -12,10 +12,12 @@ type Side = 'left' | 'right';
 function Entry({ milestone, side }: { milestone: Milestone; side: Side }) {
   return (
     <div className={cn('flex flex-col gap-1.5', side === 'left' ? 'text-right' : 'text-left')}>
-      <div className="font-pixel text-[21px] leading-[1.15] font-bold text-white">
+      <div className="font-pixel text-[17px] leading-[1.15] font-bold text-white md:text-[21px]">
         {milestone.title}
       </div>
-      <div className="text-[15px] leading-[1.35] font-medium text-white/90">{milestone.detail}</div>
+      <div className="text-[13px] leading-[1.35] font-medium text-white/90 md:text-[15px]">
+        {milestone.detail}
+      </div>
     </div>
   );
 }
@@ -24,7 +26,7 @@ function When({ children, side }: { children: string; side: Side }) {
   return (
     <div
       className={cn(
-        'text-[15px] font-semibold text-white/92',
+        'text-[13px] font-semibold text-white/92 md:text-[15px]',
         side === 'left' ? 'text-right' : 'text-left',
       )}
     >
@@ -43,7 +45,7 @@ function Marker() {
 
 export function Timeline() {
   return (
-    <div className="box-border flex h-162.5 w-160 flex-col justify-center px-9 py-10">
+    <div className="box-border flex w-full max-w-160 flex-col justify-center xl:h-162.5 xl:px-9 xl:py-10">
       <div className="relative">
         <div
           className="absolute top-0 bottom-0 left-1/2 -ml-0.5 w-1 rounded-[2px]"
@@ -55,7 +57,7 @@ export function Timeline() {
             return (
               <li
                 key={milestone.title}
-                className="grid h-29.5 grid-cols-[minmax(0,1fr)_30px_minmax(0,1fr)] items-center gap-x-4.5"
+                className="grid h-24 grid-cols-[minmax(0,1fr)_30px_minmax(0,1fr)] items-center gap-x-3 md:h-29.5 md:gap-x-4.5"
               >
                 {entryOnLeft ? (
                   <Entry milestone={milestone} side="left" />
