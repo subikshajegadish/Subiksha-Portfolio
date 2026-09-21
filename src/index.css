@@ -19,7 +19,6 @@
   --color-ink: #06213a; /* dark text on light surfaces */
   --color-paper: #f4fbff;
   --color-shade: #030b18; /* dimming overlays */
-  --color-halo: #04121f; /* ring around timeline markers */
 }
 
 @layer base {
