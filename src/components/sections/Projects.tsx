@@ -1,5 +1,6 @@
 import { PROJECTS } from '../../data/projects';
 import { useCycle } from '../../hooks/useCycle';
+import { cn } from '../../lib/cn';
 import { ContentSection } from '../layout/ContentSection';
 import { GitHubIcon } from '../icons';
 import { ArrowButton } from '../ui/ArrowButton';
@@ -56,13 +57,23 @@ export function Projects() {
         <div className="flex min-w-0 flex-1 items-center justify-center gap-3 md:gap-4.5 xl:justify-start">
           <ArrowButton direction="left" label="Previous project" onClick={prev} />
           {/* Keeps the 580x380 proportions and shrinks to fit narrower screens. */}
-          <div className="box-border flex aspect-29/19 max-w-145 min-w-0 flex-1 flex-col items-center justify-center gap-3.5 rounded-[26px] border-3 border-white bg-white/6 p-4 text-center md:p-7.5">
-            <div className="font-pixel text-[18px] font-bold text-white md:text-[24px]">
-              {project.title}
-            </div>
-            <div className="font-pixel text-[12px] font-medium tracking-[0.2em] text-white/60 uppercase md:text-[16px]">
-              [Add a screenshot]
-            </div>
+          <div className="relative box-border flex aspect-29/19 max-w-145 min-w-0 flex-1 flex-col items-center justify-center gap-3.5 overflow-hidden rounded-[26px] border-3 border-white bg-white/6 p-4 text-center md:p-7.5">
+            {project.image ? (
+              <img
+                key={project.image.src}
+                src={project.image.src}
+                alt={project.image.alt}
+                decoding="async"
+                className={cn(
+                  'absolute inset-0 size-full',
+                  project.image.fit === 'cover' ? 'object-cover' : 'bg-navy object-contain',
+                )}
+              />
+            ) : (
+              <div className="font-pixel text-[18px] font-bold text-white md:text-[24px]">
+                {project.title}
+              </div>
+            )}
           </div>
           <ArrowButton direction="right" label="Next project" onClick={next} />
         </div>
