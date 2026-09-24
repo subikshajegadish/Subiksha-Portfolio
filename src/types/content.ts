@@ -11,10 +11,11 @@ export interface Job {
 export interface Project {
   title: string;
   dates?: string;
-  bullets: readonly string[];
+  /** One or two short sentences. */
+  description: string;
   tech: readonly string[];
-  /** Optional link shown under the bullets, e.g. the source repo. */
-  link?: { label: string; href: string };
+  /** Source repository, opened from the GitHub button. */
+  repo?: string;
 }
 
 /** A milestone on the About timeline. */
