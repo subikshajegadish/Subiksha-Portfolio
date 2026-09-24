@@ -1,8 +1,10 @@
 import { PROJECTS } from '../../data/projects';
 import { useCycle } from '../../hooks/useCycle';
 import { ContentSection } from '../layout/ContentSection';
+import { GitHubIcon } from '../icons';
 import { ArrowButton } from '../ui/ArrowButton';
 import { Chip } from '../ui/Chip';
+import { CircleIconLink } from '../ui/CircleIconLink';
 
 const pad = (n: number) => String(n).padStart(2, '0');
 
@@ -19,35 +21,31 @@ export function Projects() {
           <div className="font-pixel text-[16px] font-medium tracking-[0.3em] text-white/70 md:text-[20px]">
             [ {pad(index + 1)} / {pad(PROJECTS.length)} ]
           </div>
-          <div className="flex flex-col gap-1.5">
-            <h3 className="m-0 font-pixel text-[24px] leading-[1.15] font-bold text-white uppercase md:text-[30px] xl:text-[32px]">
-              {project.title}
-            </h3>
-            {project.dates && (
-              <div className="font-body text-[15px] font-medium text-white/70 md:text-[17px]">
-                {project.dates}
-              </div>
+          <div className="flex items-start justify-between gap-4">
+            <div className="flex flex-col gap-1.5">
+              <h3 className="m-0 font-pixel text-[24px] leading-[1.15] font-bold text-white uppercase md:text-[30px] xl:text-[32px]">
+                {project.title}
+              </h3>
+              {project.dates && (
+                <div className="font-body text-[15px] font-medium text-white/70 md:text-[17px]">
+                  {project.dates}
+                </div>
+              )}
+            </div>
+            {project.repo && (
+              <CircleIconLink
+                href={project.repo}
+                label={`${project.title} on GitHub`}
+                external
+                className="size-11 shrink-0 border-azure [&>svg]:size-6"
+              >
+                <GitHubIcon />
+              </CircleIconLink>
             )}
           </div>
-          <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
-            {project.bullets.map((bullet, i) => (
-              <li key={i} className="flex items-start gap-3">
-                {/* Dot is centred on the first line of text at each size. */}
-                <span className="mt-2 size-2 shrink-0 rounded-full bg-azure md:mt-2.5" />
-                <span className="font-body text-[15px] leading-[1.55] font-medium text-white/86 md:text-[17px]">
-                  {bullet}
-                </span>
-              </li>
-            ))}
-          </ul>
-          {project.link && (
-            <a
-              href={project.link.href}
-              className="font-body text-[15px] font-medium text-azure underline underline-offset-4 hover:text-white md:text-[16px]"
-            >
-              GitHub: {project.link.label}
-            </a>
-          )}
+          <p className="m-0 font-body text-[16px] leading-[1.55] font-medium text-white/86 md:text-[18px]">
+            {project.description}
+          </p>
           <div className="mt-1 flex flex-wrap gap-3">
             {project.tech.map((tech, i) => (
               <Chip key={`${tech}-${i}`}>{tech}</Chip>
