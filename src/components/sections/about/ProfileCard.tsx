@@ -9,11 +9,9 @@ export function ProfileCard() {
       </div>
       <p className="m-0 text-[16px] leading-normal font-medium text-ink">
         Hi, I'm a software developer finishing my MEng in Software Engineering at the University of
-        Maryland. I'm into optimization, cloud and, lately, AI, and I love building systems that
-        hold up when requirements change and real-world risk shows up. One lesson has stuck with me:
-        once the design is right, the code mostly writes itself, and most bugs are just design
-        decisions made too late. These days I'm contributing to open source and testing where AI
-        models genuinely earn a place in the workflow.
+        Maryland. I'm into optimization, cloud and, lately, AI, building systems that hold up when
+        requirements change. Most bugs, I've learned, are design decisions made too late. These days
+        I'm contributing to open source and testing where AI genuinely earns its place.
       </p>
       <a
         href={PROFILE.links.cv}
