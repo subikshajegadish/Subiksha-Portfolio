@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="is-loading">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,9 +9,128 @@
       href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@500;700&amp;family=Figtree:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
+    <!--
+      Loading screen styles live inline so the loader paints before any JavaScript or the
+      main stylesheet arrives. Colours match the theme tokens in src/index.css. The bar
+      animates `transform` only, so it keeps moving while the page renders behind it.
+    -->
+    <style>
+      html.is-loading {
+        overflow: hidden;
+      }
+      body {
+        margin: 0;
+        background: #06192b;
+      }
+      .loader {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 28px;
+        padding: 0 24px;
+        background: linear-gradient(#040b20, #0b2451 55%, #1c5482);
+        font-family: 'Pixelify Sans', monospace;
+        color: #ffffff;
+        transition: opacity 0.5s ease;
+      }
+      .loader.is-done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      .loader__stars {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 2px;
+        height: 2px;
+        border-radius: 50%;
+        background: #f2f6ff;
+        box-shadow:
+          12vw 14vh #f2f6ff,
+          27vw 8vh #f2f6ff,
+          41vw 22vh #f2f6ff,
+          58vw 11vh #f2f6ff,
+          73vw 19vh #f2f6ff,
+          88vw 7vh #f2f6ff,
+          6vw 36vh #f2f6ff,
+          33vw 41vh #f2f6ff,
+          65vw 33vh #f2f6ff,
+          92vw 44vh #f2f6ff,
+          19vw 63vh #f2f6ff,
+          49vw 71vh #f2f6ff,
+          81vw 66vh #f2f6ff,
+          9vw 84vh #f2f6ff,
+          38vw 89vh #f2f6ff,
+          71vw 86vh #f2f6ff;
+        animation: loader-twinkle 2.4s ease-in-out infinite alternate;
+      }
+      .loader__text {
+        margin: 0;
+        font-size: clamp(16px, 2.2vw, 24px);
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+      .loader__bar {
+        box-sizing: border-box;
+        width: min(360px, 80vw);
+        height: 26px;
+        padding: 3px;
+        border: 3px solid #7bc9fb;
+        border-radius: 10px;
+        background: #0b2f57;
+        overflow: hidden;
+      }
+      .loader__fill {
+        height: 100%;
+        border-radius: 4px;
+        /* Blocky segments to match the pixel type. */
+        background: repeating-linear-gradient(90deg, #7bc9fb 0 14px, transparent 14px 17px);
+        transform-origin: left;
+        transform: scaleX(0.04);
+        animation: loader-fill 3s cubic-bezier(0.2, 0.7, 0.3, 1) forwards;
+      }
+      .loader.is-done .loader__fill {
+        animation: none;
+        transform: scaleX(1);
+        transition: transform 0.25s ease-out;
+      }
+      @keyframes loader-fill {
+        to {
+          transform: scaleX(0.9);
+        }
+      }
+      @keyframes loader-twinkle {
+        from {
+          opacity: 0.35;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .loader__stars,
+        .loader__fill {
+          animation: none;
+        }
+        .loader__fill {
+          transform: scaleX(0.6);
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <div id="loader" class="loader" role="status" aria-live="polite">
+      <div class="loader__stars" aria-hidden="true"></div>
+      <p class="loader__text">Loading Subiksha's portfolio</p>
+      <div class="loader__bar" aria-hidden="true"><div class="loader__fill"></div></div>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

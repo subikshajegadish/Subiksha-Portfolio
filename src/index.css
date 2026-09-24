@@ -19,6 +19,8 @@
   --color-ink: #06213a; /* dark text on light surfaces */
   --color-paper: #f4fbff;
   --color-shade: #030b18; /* dimming overlays */
+  --color-firefly: #e9ff8a; /* firefly glow */
+  --color-firefly-core: #f6ffb0;
 }
 
 @layer base {
@@ -50,6 +52,12 @@
 
   a:hover {
     color: #ffffff;
+  }
+
+  /* The firefly cursor replaces the native one; set only while it is running. */
+  html.firefly-cursor,
+  html.firefly-cursor * {
+    cursor: none !important;
   }
 
   a:focus-visible {

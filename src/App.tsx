@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { SocialBar } from './components/layout/SocialBar';
 import { NightScene } from './components/scene/NightScene';
 import { About } from './components/sections/about/About';
@@ -6,8 +7,14 @@ import { Experience } from './components/sections/Experience';
 import { Hero } from './components/sections/Hero';
 import { Projects } from './components/sections/Projects';
 import { Skills } from './components/sections/Skills';
+import { FireflyCursor } from './components/ui/FireflyCursor';
+import { hideLoaderWhenReady } from './lib/loader';
 
 export default function App() {
+  useEffect(() => {
+    hideLoaderWhenReady();
+  }, []);
+
   return (
     // `isolate` gives the section backdrops (negative z-index) a stacking context to sit in,
     // above the page background and below the fixed scene.
@@ -21,6 +28,8 @@ export default function App() {
       <Projects />
       <Skills />
       <Contact />
+
+      <FireflyCursor />
     </div>
   );
 }

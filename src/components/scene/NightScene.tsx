@@ -1,5 +1,7 @@
+import { useEffect } from 'react';
 import { Land } from './Land';
 import { SceneDefs } from './SceneDefs';
+import { captureSceneSnapshot } from './sceneSnapshot';
 import { SceneSvg } from './SceneSvg';
 import { Sky } from './Sky';
 
@@ -8,6 +10,11 @@ import { Sky } from './Sky';
  * (`.bg`) and dims over the second (`.dim2`).
  */
 export function NightScene() {
+  // The section backdrops use a still of this scene rather than a live copy.
+  useEffect(() => {
+    captureSceneSnapshot();
+  }, []);
+
   return (
     <div className="pointer-events-none fixed top-0 left-0 z-0 h-screen w-full overflow-hidden bg-night xl:max-h-225">
       <div className="bg absolute -inset-10">
