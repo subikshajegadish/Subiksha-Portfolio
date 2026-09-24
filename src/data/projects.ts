@@ -1,56 +1,66 @@
 import type { Project } from '../types/content';
 
-/** Projects shown in the carousel, in order. */
+const GITHUB = 'https://github.com/subikshajegadish';
+
+/** Projects shown in the carousel, most valuable and clearest first. */
 export const PROJECTS: readonly Project[] = [
   {
-    title: 'OpenGit',
-    bullets: [
-      'A tool that surfaces newcomer-friendly open-source issues across repositories, scoring them on more than just the good-first-issue label.',
-    ],
-    tech: ['Open Source'],
-    link: {
-      label: 'github.com/subikshajegadish/open-git',
-      href: 'https://github.com/subikshajegadish/open-git',
-    },
+    title: 'Poke Battle',
+    description:
+      'A Pokémon-style battle game where your attacks are ASL signs, recognised live from your webcam.',
+    tech: ['React', 'Flask', 'Computer Vision', 'HopHacks 2026'],
+    repo: `${GITHUB}/Poke-battle`,
   },
   {
-    title: 'Poke Battle: Sign Language Learning Game',
-    bullets: [
-      'A Pokémon-style battle game where your attacks are signs: choose a move, sign the word to your webcam, and the game decides what happens.',
-      'A pretrained sign-recognition video model (I3D, trained on WLASL) behind a Flask API recognises signs live in about two seconds on a laptop CPU, and only counts a sign as correct when it is genuinely confident.',
-    ],
-    tech: ['React', 'Vite', 'Flask', 'Computer Vision', 'HopHacks 2026'],
-  },
-  {
-    title: 'Distributed Event Management System',
+    title: 'Terp EventSphere',
     dates: 'Sep – Dec 2025',
-    bullets: [
-      'Architected a scalable microservices-based event platform with JWT authentication, RBAC, and async notification workflows supporting 1000 + concurrent multi-role users',
-      'Built RESTful APIs with Node.js + Express, PostgreSQL connection pooling, Docker, and real-time QR check-in via Socket.io, cutting check-in time to 90 sec',
-    ],
-    tech: ['React', 'Node.js', 'Express', 'PostgreSQL', 'Docker'],
+    description:
+      'A microservices event platform with role-based access, waitlists and real-time QR check-in, built for 1,000+ concurrent users.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Docker', 'Team project'],
+    repo: 'https://github.com/joyson13/Terp-EventSphere',
   },
   {
-    title: 'Algorithmic Trading Strategy Simulator',
+    title: 'Clario',
+    description:
+      'An AI file organizer that reads your files, finds how they relate, and sorts them into meaningful folders.',
+    tech: ['React', 'Express', 'Claude API'],
+    repo: `${GITHUB}/Clario`,
+  },
+  {
+    title: 'Algo Trading Simulator',
     dates: 'Nov – Dec 2025',
-    bullets: [
-      'Built a full-stack backtesting platform computing CAGR, Sharpe Ratio, and Max Drawdown across 10 strategies, exposed via FastAPI and an interactive React dashboard',
-      'Containerized with Docker, cutting backtest runtime by 60%',
-    ],
+    description:
+      'A backtesting platform that scores 10 trading strategies on CAGR, Sharpe ratio and max drawdown.',
     tech: ['Python', 'FastAPI', 'React', 'Docker'],
-    link: {
-      label: 'github.com/subikshajegadish/algo-trading-sim',
-      href: 'https://github.com/subikshajegadish/algo-trading-sim',
-    },
+    repo: `${GITHUB}/algo-trading-sim`,
   },
   {
-    title: 'Differentiable NAS for Optimizing Vision Encoders in Multimodal Models',
+    title: 'Vibely',
+    description:
+      'An AI dating app that matches people on shared movies, shows and music instead of photos, with real-time chat.',
+    tech: ['React', 'Node.js', 'Socket.IO', 'Gemini API', 'Team project'],
+    repo: 'https://github.com/Nividhitha99/Vibly',
+  },
+  {
+    title: 'NAS Vision Encoder',
     dates: '2025',
-    bullets: [
-      'Implemented a DARTS-style NAS framework to optimize ViT-style vision encoders over depth, attention heads, MLP ratios, patch sizes, and skip connections',
-      'Integrated multi-objective efficiency penalties (FLOPs, parameter count, visual token count) and validated on a filtered MSCOCO VQAv2 subset (309 Q&A across 50 images)',
-      'Real-data search favored shallower architectures (6 layers vs 8) with more skip connections, achieving 13.8M params and 6.8 GFLOPs',
-    ],
+    description:
+      'Differentiable architecture search for leaner ViT-style vision encoders in multimodal models, landing at 13.8M params and 6.8 GFLOPs.',
     tech: ['PyTorch', 'DARTS/GDAS'],
+    repo: `${GITHUB}/nas-vision-encoder`,
+  },
+  {
+    title: 'Image Contrast Enhancement',
+    description:
+      'Contrast enhancement with an exposure fusion framework, comparing the original method and a modified version on BRISQUE image quality.',
+    tech: ['Python', 'OpenCV', 'Jupyter'],
+    repo: `${GITHUB}/Image-Contrast-Enhancement-using-Exposure-Fusion-Framework`,
+  },
+  {
+    title: 'Portfolio',
+    description:
+      'This site: my pixel night-sky portfolio, rebuilt in React, TypeScript and Tailwind CSS.',
+    tech: ['React', 'TypeScript', 'Tailwind CSS'],
+    repo: `${GITHUB}/Subiksha-Portfolio`,
   },
 ];
