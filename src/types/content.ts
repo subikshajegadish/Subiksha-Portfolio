@@ -16,6 +16,17 @@ export interface Project {
   tech: readonly string[];
   /** Source repository, opened from the GitHub button. */
   repo?: string;
+  image?: ProjectImage;
+}
+
+export interface ProjectImage {
+  src: string;
+  alt: string;
+  /**
+   * `cover` fills the preview box (the illustrated covers are drawn at its 29:19 shape).
+   * `contain` shows the whole image, for screenshots with a different shape.
+   */
+  fit: 'cover' | 'contain';
 }
 
 /** A milestone on the About timeline. */
