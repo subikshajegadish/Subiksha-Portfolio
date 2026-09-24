@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { createPortal } from 'react-dom';
 
 /** Only devices with a real mouse or trackpad get the custom cursor. */
 const FINE_POINTER = '(hover: hover) and (pointer: fine)';
@@ -50,7 +51,8 @@ export function FireflyCursor() {
 
   if (!enabled) return null;
 
-  return (
+  // Rendered into <body> so it sits above everything, including the loading screen.
+  return createPortal(
     <div
       ref={ref}
       aria-hidden="true"
@@ -62,6 +64,7 @@ export function FireflyCursor() {
         <div className="firefly-glow absolute top-1/2 left-1/2 size-7 -translate-1/2 rounded-full bg-firefly/40 blur-[3px] transition-[width,height] duration-200 group-data-[active=true]:size-10" />
         <div className="relative size-2 rounded-full bg-firefly-core shadow-[0_0_6px_2px_rgba(233,255,138,0.8)]" />
       </div>
-    </div>
+    </div>,
+    document.body,
   );
 }
